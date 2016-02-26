@@ -4,11 +4,11 @@
 ## Write a short comment describing this function
 
 ##This function was made to caching the inverse of a matrix "x"
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = as.matrix()) {
         inverse<-NULL
         
         ##a function to set a value to "x"
-        set<-function(y = matrix()){ ##"y" must be a matrix, to fix in x original matrix
+        set<-function(y = as.matrix()){ ##"y" must be a matrix, to fix in x original matrix
                 x<<-y
                 inverse<<-NULL  ##because we didn't calculate the inverse,
                                 ##but we can fix it doing inverse<<-solve(x)

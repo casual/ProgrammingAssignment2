@@ -6,12 +6,21 @@
 ##This function was made to caching the inverse of a matrix "x"
 makeCacheMatrix <- function(x = matrix()) {
         inverse<-NULL
-        set<-function(y){
+        
+        ##a function to set a value to "x"
+        set<-function(y = matrix()){ ##"y" must be a matrix, to fix in x original matrix
                 x<<-y
-                inverse<<-NULL
+                inverse<<-NULL  ##because we didn't calculate the inverse,
+                                ##but we can fix it doing inverse<<-solve(x)
         }
+        
+        ##a function to retrieve "x" value
         get<-function() x
-        setinverse<-function(solve) inverse<<-solve
+        
+        ##a function to set  a new value for the inverse of "x" by solve() function
+        setinverse<-function(newinverse) inverse<<-newinverse
+        
+        ##a function to retrieve the value of the inverse of "x"
         getinverse<-function() inverse
         list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
